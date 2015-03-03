@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://github.com/plugnutbot/main/langIndex.json", function (json) {
+        $.get("https://rawgit.com/Yemasthui/basicBot/master/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -181,34 +181,34 @@
     var basicBot = {
         version: "2.2.1",
         status: false,
-        name: "NUTBOT",
+        name: "basicBot",
         loggedInID: null,
-        scriptLink: "https://nutslamer.byethost24.com/basicBot.js",
-        cmdLink: "https://github.com/plugnutbot/main/cmd.txt",
-        chatLink: "https://github.com/plugnutbot/main/chatinfo.json",
+        scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
+        cmdLink: "http://git.io/245Ppg",
+        chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "NUTBOT",
+            botName: "basicBot",
             language: "english",
-            chatLink: "https://github.com/plugnutbot/main/chatinfo.json",
-            startupCap: 200, // 1-200
+            chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+            startupCap: 1, // 1-200
             startupVolume: 0, // 0-100
-            startupEmoji: true, // true or false
+            startupEmoji: false, // true or false
             maximumAfk: 120,
             afkRemoval: true,
             maximumDc: 60,
-            bouncerPlus: false,
+            bouncerPlus: true,
             blacklistEnabled: true,
             lockdownEnabled: false,
             lockGuard: false,
             maximumLocktime: 10,
             cycleGuard: true,
             maximumCycletime: 10,
-            voteSkip: true,
-            voteSkipLimit: 5,
+            voteSkip: false,
+            voteSkipLimit: 10,
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: true,
@@ -216,30 +216,35 @@
             usercommandsEnabled: true,
             lockskipPosition: 3,
             lockskipReasons: [
+                ["theme", "This song does not fit the room theme. "],
                 ["op", "This song is on the OP list. "],
                 ["history", "This song is in the history. "],
+                ["mix", "You played a mix, which is against the rules. "],
+                ["sound", "The song you played had bad sound quality or no sound. "],
+                ["nsfw", "The song you contained was NSFW (image or sound). "],
                 ["unavailable", "The song you played was not available for some users. "]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
             motdEnabled: false,
             motdInterval: 5,
-            motd: "",
+            motd: "Temporary Message of the Day",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: Rules are Located In COMMUNITY DESCRIPTION,
+            rulesLink: null,
             themeLink: null,
             fbLink: null,
-            youtubeLink: Squirrel's Youtube http://www.youtube.com/squirrel,
-            website: Squirrel's Website http://www.squirrel.tv,
+            youtubeLink: null,
+            website: null,
             intervalMessages: [],
             messageInterval: 5,
-            songstats: false,
+            songstats: true,
             commandLiteral: "!",
             blacklists: {
-                OP: "https://github.com/plugnutbot/main/blacklist.json"
+                NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
             }
         },
         room: {
@@ -284,7 +289,7 @@
                 id: [],
                 position: []
             },
-            blacklists: {https://github.com/plugnutbot/main/blacklist.json
+            blacklists: {
 
             },
             newBlacklisted: [],
