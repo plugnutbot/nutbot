@@ -179,7 +179,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.1 beta",
+        version: "0.2 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -191,7 +191,7 @@
         retrieveSettings: retrieveSettings,
         retrieveFromStorage: retrieveFromStorage,
         settings: {
-            botName: "basicBot",
+            botName: "NUTBOT",
             language: "english",
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
             startupCap: 200, // 1-200
@@ -1624,7 +1624,7 @@
 
             nutCommand: {
                 command: 'nut',
-                rank: 'bouncer',
+                rank: 'dj',
                 type: 'startsWith',
                 nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
                     'Blesses you with the Nuttiest Cookie in the World',
@@ -2090,7 +2090,7 @@
 
             linkCommand: {
                 command: 'link',
-                rank: 'user',
+                rank: 'dj',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2471,7 +2471,7 @@
 
             refreshCommand: {
                 command: 'refresh',
-                rank: 'manager',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
