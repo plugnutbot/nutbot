@@ -179,7 +179,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "2.2.1",
+        version: "0.1 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -194,7 +194,7 @@
             botName: "NUTBOT",
             language: "english",
             chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
-            startupCap: 1, // 1-200
+            startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             maximumAfk: 120,
@@ -226,21 +226,21 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motdEnabled: false,
-            motdInterval: 5,
-            motd: "Temporary Message of the Day",
+            motdEnabled: true,
+            motdInterval: 4,
+            motd: "Welcome to the Squirrel Plug DJ Room - http://www.squirrel.tv",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
             opLink: null,
-            rulesLink: null,
+            rulesLink: true,
             themeLink: null,
-            fbLink: null,
-            youtubeLink: null,
-            website: null,
+            fbLink: true,
+            youtubeLink: true,
+            website: true,
             intervalMessages: [],
-            messageInterval: 5,
-            songstats: true,
+            messageInterval: 2,
+            songstats: false,
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
@@ -1611,6 +1611,62 @@
 
             commandsCommand: {
                 command: 'commands',
+                rank: 'dj',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(subChat(basicBot.chat.commandslink, {botname: basicBot.settings.botName, link: basicBot.cmdLink}));
+                    }
+                }
+            },
+
+            nutCommand: {
+                command: 'nut',
+                rank: 'bouncer',
+                type: 'startsWith',
+                nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
+                    'Blesses you with the Nuttiest Cookie in the World',
+                    'Gives you a Cookie that is made entirely out of some dark vinil, oh it\'s a record, LETS PLAY IT',
+                    'Gives you a Cookie that is crusted with Nuts',
+                    'Gives you a Cookie that is rather Prickly, oh wait its just a Hedgehog'
+                ],
+                getnut: function () {
+                    var c = Math.floor(Math.random() * this.nut.length);
+                    return this.nut[c];
+                },
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+
+                        var space = msg.indexOf(' ');
+                        if (space === -1) {
+                            API.sendChat(basicBot.chat.eatnut);
+                            return false;
+                        }
+                        else {
+                            var name = msg.substring(space + 2);
+                            var user = basicBot.userUtilities.lookupUserName(name);
+                            if (user === false || !user.inRoom) {
+                                return API.sendChat(subChat(basicBot.chat.nousernut, {name: name}));
+                            }
+                            else if (user.username === chat.un) {
+                                return API.sendChat(subChat(basicBot.chat.selfnut, {name: name}));
+                            }
+                            else {
+                                return API.sendChat(subChat(basicBot.chat.nut, {nameto: user.username, namefrom: chat.un, nut: this.getnut()}));
+                            }
+                        }
+                    }
+                }
+            },
+            
+            
+            commandsCommand: {
+                command: 'commands',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -1800,7 +1856,7 @@
                 }
             },
 
-            /*deletechatCommand: {
+            deletechatCommand: {
                 command: 'deletechat',
                 rank: 'mod',
                 type: 'startsWith',
@@ -1998,8 +2054,8 @@
             },
 
             killCommand: {
-                command: 'kill',
-                rank: 'bouncer',
+                command: 'stop',
+                rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
