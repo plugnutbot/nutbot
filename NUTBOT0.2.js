@@ -183,9 +183,9 @@
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://rawgit.com/Yemasthui/basicBot/master/basicBot.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.js",
         cmdLink: "http://git.io/245Ppg",
-        chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+        chatLink: "http://nutslamer.byethost24.com/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -1924,15 +1924,14 @@
             },
 
             fbCommand: {
-                command: 'fb',
+                command: 'facebook',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.fbLink === "string")
-                            API.sendChat(subChat(basicBot.chat.facebook, {link: basicBot.settings.fbLink}));
+                        API.sendChat(basicBot.chat.facebook)
                     }
                 }
             },
@@ -2367,7 +2366,7 @@
                         var name;
                         if (lastSpace === msg.indexOf(' ')) {
                             name = msg.substring(cmd.length + 2);
-                            time = 45;
+                            time = 5;
                         }
                         else {
                             time = msg.substring(lastSpace + 1);
@@ -2381,8 +2380,7 @@
                         if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.invaliduserspecified, {name: chat.un}));
                         var permFrom = basicBot.userUtilities.getPermission(chat.uid);
                         var permUser = basicBot.userUtilities.getPermission(user.id);
-                        if (permFrom > permUser) {
-                            /*
+                        if (permFrom > permUser)
                              basicBot.room.mutedUsers.push(user.id);
                              if (time === null) API.sendChat(subChat(basicBot.chat.mutednotime, {name: chat.un, username: name}));
                              else {
@@ -2573,15 +2571,14 @@
             },
 
             rulesCommand: {
-                command: 'rules',
+                command: 'ping',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.rulesLink === "string")
-                            return API.sendChat(subChat(basicBot.chat.roomrules, {link: basicBot.settings.rulesLink}));
+                        API.sendChat(basicBot.chat.rules)
                     }
                 }
             },
@@ -3023,8 +3020,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.website === "string")
-                            API.sendChat(subChat(basicBot.chat.website, {link: basicBot.settings.website}));
+                        API.sendChat(basicBot.chat.website)
                     }
                 }
             },
@@ -3037,11 +3033,24 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (typeof basicBot.settings.youtubeLink === "string")
-                            API.sendChat(subChat(basicBot.chat.youtube, {name: chat.un, link: basicBot.settings.youtubeLink}));
+                        API.sendChat(basicBot.chat.youtube)
                     }
                 }
-            }
+            },
+            
+            twitchCommand: {
+                command: 'twitch',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.twitch)
+                    }
+                }
+            },
+            
         }
     };
 
