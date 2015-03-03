@@ -98,7 +98,7 @@
     "notinwaitlist": "/me @%%NAME%%, you are not on the waitlist.",
     "eta": "/me @%%NAME%% you will reach the booth in approximately %%TIME%%.",
     "facebook": "/me Like us on facebook https://www.facebook.com/DaSquirrelsNuts",
-	"twitch": "/me come and watch me scream on twitch http://www.twitch.tv/squirrel",  
+    "twitch": "/me come and watch me scream on twitch http://www.twitch.tv/squirrel",  
     "starterhelp": "/me This image will get you started on plug: %%LINK%%",
     "roulettejoin": "/me @%%NAME%% joined the roulette! (!leave if you regret it.)",
     "jointime": "/me [@%%NAMEFROM%%] @%%USERNAME%% has been in the room for %%TIME%%.",
@@ -141,6 +141,6 @@
     "commandscd": "/me [@%%NAME%%] The cooldown for commands by users is now set to %%TIME%% seconds.",
     "voteratio": "/me [@%%NAME%%] @%%USERNAME%% ~ woots: %%WOOT%%, mehs: %%MEHS%%, ratio (w/m): %%RATIO%%.",
     "website": "/me Please visit our website http://www.squirrel.tv",
-    "youtube": "/me [%%NAME%%] Subscribe to us on youtube http://www.youtube.com/squirrel",
+    "youtube": "/me Subscribe to squirrel on youtube http://www.youtube.com/squirrel",
     "songstatistics": "/me %%ARTIST%% - %%TITLE%%: %%WOOTS%%W/%%GRABS%%G/%%MEHS%%M."
 }
