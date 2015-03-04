@@ -94,7 +94,7 @@
     "eatnuts": "/me eats a nut cookie.",
     "nousernuts": "/em doesn't see %%NAME%% in room and eats a nut cookie himself.",
     "selfnuts": "/me @%%NAME%%, you're a bit greedy, aren't you? Giving nut cookies to yourself, bah. Share some with other people!",
-    "nuts": "/me @%%NAMETO%%, @%%NAMEFROM%% %%nuts%%",
+    "nuts": "/me @%%NAMETO%%, @%%NAMEFROM%% %%NUTS%%",
     "cycleguardtime": "/me [@%%NAME%%] The cycleguard is set to %%TIME%% minute(s).",
     "dclookuprank": "/me [@%%NAME%%] Only bouncers and above can do a lookup for others.",
     "emojilist": "/me Emoji list: %%LINK%%",
