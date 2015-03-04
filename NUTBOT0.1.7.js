@@ -179,11 +179,11 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.1.6 beta",
+        version: "0.1.7 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.6.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.7.js",
         cmdLink: "you not geting it ha!",
         chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng.json",
         chat: null,
@@ -235,7 +235,7 @@
             opLink: null,
             rulesLink: true,
             themeLink: null,
-            intervalMessages: [Welcome to the Squirrel Plug DJ Room],
+            intervalMessages: ["Welcome to the Squirrel Plug DJ Room"],
             messageInterval: 4,
             songstats: false,
             commandLiteral: "!",
@@ -992,7 +992,7 @@
                         return true;
                     }
                 }
-                 **/
+               
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
                     API.sendChat(subChat(basicBot.chat.adfly, {name: chat.un}));
