@@ -179,11 +179,11 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.8 beta",
+        version: "0.9 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.7.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.9.js",
         cmdLink: "you not geting it ha!",
         chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/e.json",
         chat: null,
@@ -1931,7 +1931,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        (API.sendChat(subChat(basicBot.chat.facebook)
+                        API.sendChat(basicBot.chat.facebook)
                     }
                 }
             },
@@ -2933,7 +2933,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        (API.sendChat(subChat(basicBot.chat.website)
+                        API.sendChat(basicBot.chat.website)
                     }
                 }
             },
@@ -2946,7 +2946,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        (API.sendChat(subChat(basicBot.chat.youtube)
+                        API.sendChat(basicBot.chat.youtube)
                     }
                 }
             },
@@ -2959,7 +2959,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        (API.sendChat(subChat(basicBot.chat.twitch)
+                        API.sendChat(basicBot.chat.twitch)
                     }
                 }
             },
