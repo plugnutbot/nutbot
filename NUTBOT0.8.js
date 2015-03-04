@@ -179,7 +179,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.6 beta",
+        version: "0.8 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -1624,7 +1624,7 @@
 
             nutCommand: {
                 command: 'nut',
-                rank: 'dj',
+                rank: 'user',
                 type: 'startsWith',
                 nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
                     'Blesses you with the Nuttiest Cookie in the World',
@@ -1931,7 +1931,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.facebook)
+                        (API.sendChat(subChat(basicBot.chat.facebook)
                     }
                 }
             },
@@ -2484,7 +2484,7 @@
             },
 
             rulesCommand: {
-                command: 'ping',
+                command: 'rules',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2933,7 +2933,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.website)
+                        (API.sendChat(subChat(basicBot.chat.website)
                     }
                 }
             },
@@ -2946,7 +2946,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.youtube)
+                        (API.sendChat(subChat(basicBot.chat.youtube)
                     }
                 }
             },
@@ -2959,7 +2959,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.twitch)
+                        (API.sendChat(subChat(basicBot.chat.twitch)
                     }
                 }
             },
