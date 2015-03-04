@@ -178,7 +178,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.7 beta",
+        version: "0.2.8 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -1609,7 +1609,7 @@
 
             commandsCommand: {
                 command: 'commands',
-                rank: 'dj',
+                rank: 'residentdj',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1620,9 +1620,9 @@
                 }
             },
 
-            nutCommand: {
+            nutsCommand: {
                 command: 'nuts',
-                rank: 'user',
+                rank: 'residentdj',
                 type: 'startsWith',
                 nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
                     'Blesses you with the Nuttiest Cookie in the World',
