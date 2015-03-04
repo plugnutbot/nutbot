@@ -193,7 +193,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://rawgit.com/Yemasthui/basicBot/master/lang/en.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/en.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
