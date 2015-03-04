@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.4 beta",
+        version: "0.2.6 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.5.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.6.js",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.co",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/en.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/laaa.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/en.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
