@@ -31,7 +31,7 @@
         localStorage.setItem("basicBotRoom", JSON.stringify(basicBot.room));
         var basicBotStorageInfo = {
             time: Date.now(),
-            stored: true,
+            stored: false,
             version: basicBot.version
         };
         localStorage.setItem("basicBotStorageInfo", JSON.stringify(basicBotStorageInfo));
@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/master/la.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/master/la1.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -95,7 +95,7 @@
             }
         }
     };
-
+    /*
     var retrieveFromStorage = function () {
         var info = localStorage.getItem("basicBotStorageInfo");
         if (info === null) API.chatLog(basicBot.chat.nodatafound);
@@ -120,6 +120,7 @@
                 API.chatLog(basicBot.chat.datarestored);
             }
         }
+        */
         /*var json_sett = null;
         var roominfo = document.getElementById("room-info");
         info = roominfo.textContent;
@@ -179,13 +180,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.1.9 beta",
+        version: "0.2 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.9.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.js",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/engl.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng1.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -193,7 +194,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/engl.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng1.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
