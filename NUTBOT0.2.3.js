@@ -95,13 +95,13 @@
             }
         }
     };
-    /*
+   
     var retrieveFromStorage = function () {
         var info = localStorage.getItem("basicBotStorageInfo");
         if (info === null) API.chatLog(basicBot.chat.nodatafound);
         else {
-            var settings = JSON.parse(localStorage.getItem("basicBotsettings"));
-            var room = JSON.parse(localStorage.getItem("basicBotRoom"));
+            var settings = JSON.parse(localStorage.getItem("basicBotsetting"));
+            var room = JSON.parse(localStorage.getItem("basicBotRoo"));
             var elapsed = Date.now() - JSON.parse(info).time;
             if ((elapsed < 1 * 60 * 60 * 1000)) {
                 API.chatLog(basicBot.chat.retrievingdata);
@@ -120,7 +120,7 @@
                 API.chatLog(basicBot.chat.datarestored);
             }
         }
-        */
+ 
         /*var json_sett = null;
         var roominfo = document.getElementById("room-info");
         info = roominfo.textContent;
@@ -180,11 +180,11 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.2 beta",
+        version: "0.2.3 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.2.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.3.js",
         cmdLink: "you not geting it ha!",
         chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/enga.json",
         chat: null,
