@@ -179,11 +179,11 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.12 beta",
+        version: "0.1.3 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.12.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.3.js",
         cmdLink: "you not geting it ha!",
         chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/e.json",
         chat: null,
@@ -1098,7 +1098,7 @@
                 'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
             ],
             curses: [
-                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka'
+                'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka','shit','fuck', 'shit', 'damn', 'bloody', 'bitch', 'piss', 'crap', 'cunt', 'damn', 'dick', 'cock', 'darn', 'pussy', 'asshole', 'bastard', 'fag', 'bugger', 'douche', 'slut', 'bollock', 'arsehole', 'bollocks
             ]
         },
         connectAPI: function () {
