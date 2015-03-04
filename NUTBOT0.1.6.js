@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/master/lang.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/master/lan.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -179,13 +179,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.1.5 beta",
+        version: "0.1.6 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.5.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.1.6.js",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/e.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -193,7 +193,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/e.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -983,8 +983,8 @@
                     API.moderateDeleteChat(chat.cid);
                     return true;
                 }
-                /**
-                 var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+               
+                 var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
                     if (perm === 0) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
@@ -1622,7 +1622,7 @@
             },
 
             nutCommand: {
-                command: 'nut',
+                command: 'nuts',
                 rank: 'user',
                 type: 'startsWith',
                 nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
@@ -1631,9 +1631,9 @@
                     'Gives you a Cookie that is crusted with Nuts',
                     'Gives you a Cookie that is rather Prickly, oh wait its just a Hedgehog'
                 ],
-                getnut: function () {
-                    var c = Math.floor(Math.random() * this.nut.length);
-                    return this.nut[c];
+                getnuts: function () {
+                    var c = Math.floor(Math.random() * this.nuts.length);
+                    return this.nuts[c];
                 },
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1643,20 +1643,20 @@
 
                         var space = msg.indexOf(' ');
                         if (space === -1) {
-                            API.sendChat(basicBot.chat.eatnut);
+                            API.sendChat(basicBot.chat.eatnuts);
                             return false;
                         }
                         else {
                             var name = msg.substring(space + 2);
                             var user = basicBot.userUtilities.lookupUserName(name);
                             if (user === false || !user.inRoom) {
-                                return API.sendChat(subChat(basicBot.chat.nousernut, {name: name}));
+                                return API.sendChat(subChat(basicBot.chat.nousernuts, {name: name}));
                             }
                             else if (user.username === chat.un) {
-                                return API.sendChat(subChat(basicBot.chat.selfnut, {name: name}));
+                                return API.sendChat(subChat(basicBot.chat.selfnuts, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.nut, {nameto: user.username, namefrom: chat.un, nut: this.getnut()}));
+                                return API.sendChat(subChat(basicBot.chat.nuts, {nameto: user.username, namefrom: chat.un, nut: this.getnuts()}));
                             }
                         }
                     }
@@ -1790,7 +1790,7 @@
 
             voteskipCommand: {
                 command: 'voteskip',
-                rank: 'manager',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1970,7 +1970,7 @@
             },
 
             joinCommand: {
-                command: 'join',
+                command: 'raffle',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
