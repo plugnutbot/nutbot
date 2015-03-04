@@ -140,10 +140,10 @@
                     }
                 }
             });
-        }*/
+        }
 
     };
-
+*/
     String.prototype.splitBetween = function (a, b) {
         var self = this;
         self = this.split(a);
@@ -180,11 +180,11 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2 beta",
+        version: "0.2.1 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.js",
+        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.1.js",
         cmdLink: "you not geting it ha!",
         chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/eng1.json",
         chat: null,
