@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/master/laaa.json", function (json) {
+        $.get("https://rawgit.com/plugnutbot/nutbot/master/lang/langIndexa.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.6 beta",
+        version: "0.2.7 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
-        scriptLink: "https://github.com/plugnutbot/nutbot/blob/master/NUTBOT0.2.6.js",
+        scriptLink: "you are not geting it ask whitt",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/en.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/en.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/master/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
