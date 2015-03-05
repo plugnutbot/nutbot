@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.6/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.8/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.3.7 beta",
+        version: "0.3.8 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
-        cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.7/lang/eng.json",
+        cmdLink: "some may not work http://goo.gl/wplrO9",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.8/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.7/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.8/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -943,7 +943,7 @@
                 ch = msg.charAt(i);
                 if (ch >= 'A' && ch <= 'Z') capitals++;
             }
-            if (capitals >= 8) {
+            if (capitals >= 10) {
                 API.sendChat(subChat(basicBot.chat.caps, {name: chat.un}));
                 return true;
             }
@@ -1563,34 +1563,6 @@
                 }
             },
 
-            bouncerPlusCommand: {
-                command: 'bouncer+',
-                rank: 'mod',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        if (basicBot.settings.bouncerPlus) {
-                            basicBot.settings.bouncerPlus = false;
-                            return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': 'Bouncer+'}));
-                        }
-                        else {
-                            if (!basicBot.settings.bouncerPlus) {
-                                var id = chat.uid;
-                                var perm = basicBot.userUtilities.getPermission(id);
-                                if (perm > 2) {
-                                    basicBot.settings.bouncerPlus = true;
-                                    return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': 'Bouncer+'}));
-                                }
-                            }
-                            else return API.sendChat(subChat(basicBot.chat.bouncerplusrank, {name: chat.un}));
-                        }
-                    }
-                }
-            },
-
             clearchatCommand: {
                 command: 'clearchat',
                 rank: 'manager',
@@ -2005,50 +1977,6 @@
                 }
             },
 
-            kickCommand: {
-                command: 'kick',
-                rank: 'bouncer',
-                type: 'startsWith',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        var msg = chat.message;
-                        var lastSpace = msg.lastIndexOf(' ');
-                        var time;
-                        var name;
-                        if (lastSpace === msg.indexOf(' ')) {
-                            time = 0.25;
-                            name = msg.substring(cmd.length + 2);
-                        }
-                        else {
-                            time = msg.substring(lastSpace + 1);
-                            name = msg.substring(cmd.length + 2, lastSpace);
-                        }
-
-                        var user = basicBot.userUtilities.lookupUserName(name);
-                        var from = chat.un;
-                        if (typeof user === 'boolean') return API.sendChat(subChat(basicBot.chat.nouserspecified, {name: chat.un}));
-
-                        var permFrom = basicBot.userUtilities.getPermission(chat.uid);
-                        var permTokick = basicBot.userUtilities.getPermission(user.id);
-
-                        if (permFrom <= permTokick)
-                            return API.sendChat(subChat(basicBot.chat.kickrank, {name: chat.un}));
-
-                        if (!isNaN(time)) {
-                            API.sendChat(subChat(basicBot.chat.kick, {name: chat.un, username: name, time: time}));
-                            if (time > 24 * 60 * 60) API.moderateBanUser(user.id, 1, API.BAN.PERMA);
-                            else API.moderateBanUser(user.id, 1, API.BAN.DAY);
-                            setTimeout(function (id, name) {
-                                API.moderateUnbanUser(id);
-                                console.log('Unbanned @' + name + '. (' + id + ')');
-                            }, time * 60 * 1000, user.id, name);
-                        }
-                        else API.sendChat(subChat(basicBot.chat.invalidtime, {name: chat.un}));
-                    }
-                }
-            },
 
             killCommand: {
                 command: 'stop',
@@ -2396,24 +2324,6 @@
                 }
             },
 
-            reloadCommand: {
-                command: 'reload',
-                rank: 'bouncer',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.sendChat(basicBot.chat.reload);
-                        storeToStorage();
-                        basicBot.disconnectAPI();
-                        kill();
-                        setTimeout(function () {
-                            $.getScript(basicBot.scriptLink);
-                        }, 2000);
-                    }
-                }
-            },
 
             removeCommand: {
                 command: 'remove',
@@ -2949,15 +2859,15 @@
                 }
             },
             
-             testCommand: {
-                command: 'test',
+             modCommand: {
+                command: 'mods',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat(basicBot.chat.nuts)
+                        API.sendChat(basicBot.chat.mods)
                     }
                 }
              },
