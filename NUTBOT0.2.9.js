@@ -31,7 +31,7 @@
         localStorage.setItem("basicBotRoom", JSON.stringify(basicBot.room));
         var basicBotStorageInfo = {
             time: Date.now(),
-            stored: false,
+            stored: true,
             version: basicBot.version
         };
         localStorage.setItem("basicBotStorageInfo", JSON.stringify(basicBotStorageInfo));
@@ -178,7 +178,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.8 beta",
+        version: "0.2.9 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -1655,7 +1655,7 @@
                                 return API.sendChat(subChat(basicBot.chat.selfnuts, {name: name}));
                             }
                             else {
-                                return API.sendChat(subChat(basicBot.chat.nuts, {nameto: user.username, namefrom: chat.un, nut: this.getnuts()}));
+                                return API.sendChat(subChat(basicBot.chat.nuts, {nameto: user.username, namefrom: chat.un, nuts: this.getnuts()}));
                             }
                         }
                     }
