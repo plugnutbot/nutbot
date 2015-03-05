@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.3.5 beta",
+        version: "0.3.7 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.6/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.7/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.6/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.7/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -234,8 +234,9 @@
             opLink: null,
             rulesLink: true,
             themeLink: null,
-            intervalMessages: ["Welcome to the Squirrel Plug DJ Room],
+            intervalMessages: ["Welcome to the Squirrel Plug DJ Room"],
             messageInterval: 4,
+            songstats: false,
             songstats: false,
             commandLiteral: "!",
             blacklists: {
