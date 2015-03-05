@@ -234,7 +234,7 @@
             opLink: null,
             rulesLink: true,
             themeLink: null,
-            intervalMessages: ["Welcome to the Squirrel Plug DJ Room" "Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts" "Subscribe to Squirrel on youtube http://www.youtube.com/squirrel" "Please visit Squirrel's website http://www.squirrel.tv" "Come and watch Squirrel scream on twitch http://www.twitch.tv/squirrel" "Like Squirrel on facebook https://www.facebook.com/DaSquirrelsNuts"],
+            intervalMessages: ["Welcome to the Squirrel Plug DJ Room],
             messageInterval: 4,
             songstats: false,
             commandLiteral: "!",
