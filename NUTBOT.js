@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.5/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -184,7 +184,7 @@
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.5/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.5/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -234,7 +234,7 @@
             opLink: null,
             rulesLink: true,
             themeLink: null,
-            intervalMessages: ["Welcome to the Squirrel Plug DJ Room"]["Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts"]["Subscribe to Squirrel on youtube http://www.youtube.com/squirrel"]["Please visit Squirrel's website http://www.squirrel.tv"]["Come and watch Squirrel scream on twitch http://www.twitch.tv/squirrel"]["Like Squirrel on facebook https://www.facebook.com/DaSquirrelsNuts"],
+            intervalMessages: ["Welcome to the Squirrel Plug DJ Room" "Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts" "Subscribe to Squirrel on youtube http://www.youtube.com/squirrel" "Please visit Squirrel's website http://www.squirrel.tv" "Come and watch Squirrel scream on twitch http://www.twitch.tv/squirrel" "Like Squirrel on facebook https://www.facebook.com/DaSquirrelsNuts"],
             messageInterval: 4,
             songstats: false,
             commandLiteral: "!",
