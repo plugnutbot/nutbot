@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.3/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -184,7 +184,7 @@
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "you not geting it ha!",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.3/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.3/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.3.4/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -234,7 +234,7 @@
             opLink: null,
             rulesLink: true,
             themeLink: null,
-            intervalMessages: ["Welcome to the Squirrel Plug DJ Room"],
+            intervalMessages: ["Welcome to the Squirrel Plug DJ Room"]["Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts"]["Subscribe to Squirrel on youtube http://www.youtube.com/squirrel"]["Please visit Squirrel's website http://www.squirrel.tv"]["Come and watch Squirrel scream on twitch http://www.twitch.tv/squirrel"]["Like Squirrel on facebook https://www.facebook.com/DaSquirrelsNuts"],
             messageInterval: 4,
             songstats: false,
             commandLiteral: "!",
@@ -1626,7 +1626,7 @@
                 type: 'startsWith',
                 nuts: ['gives you a very Nutty Cookie, Squirrel\'s Favourite!',
                     'Blesses you with the Nuttiest Cookie in the World',
-                    'Gives you a Cookie that is made entirely out of some dark vinil, oh it\'s a record, LETS PLAY IT',
+                    'Gives you a Cookie that is made entirely out of some dark vinyl, oh it\'s a record, LETS PLAY IT',
                     'Gives you a Cookie that is crusted with Nuts',
                     'Gives you a Cookie that is rather Prickly, oh wait its just a Hedgehog'
                 ],
@@ -1698,12 +1698,7 @@
                     'gives you an Oreo cookie with a glass of milk!',
                     'gives you a rainbow cookie made with love :heart:',
                     'gives you an old cookie that was left out in the rain, it\'s moldy.',
-                    'bakes you fresh cookies, it smells amazing.',
-                    'gives you a very Nutty Cookie, Squirrel\'s Favourite!',
-                    'Blesses you with the Nuttiest Cookie in the World',
-                    'Gives you a Cookie that is made entirely out of some dark vinil, oh it\'s a record, LETS PLAY IT',
-                    'Gives you a Cookie that is crusted with Nuts',
-                    'Gives you a Cookie that is rather Prickly, oh wait its just a Hedgehog'
+                    'bakes you fresh cookies, it smells amazing.'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
