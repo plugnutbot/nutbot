@@ -1619,7 +1619,7 @@
                     }
                 }
             },
-
+           /**
             nutsCommand: {
                 command: 'nuts',
                 rank: 'residentdj',
@@ -1661,7 +1661,7 @@
                     }
                 }
             },
-            
+            **/
             
             commandsCommand: {
                 command: 'commands',
@@ -1699,7 +1699,12 @@
                     'gives you an Oreo cookie with a glass of milk!',
                     'gives you a rainbow cookie made with love :heart:',
                     'gives you an old cookie that was left out in the rain, it\'s moldy.',
-                    'bakes you fresh cookies, it smells amazing.'
+                    'bakes you fresh cookies, it smells amazing.',
+                    'gives you a very Nutty Cookie, Squirrel\'s Favourite!',
+                    'Blesses you with the Nuttiest Cookie in the World',
+                    'Gives you a Cookie that is made entirely out of some dark vinil, oh it\'s a record, LETS PLAY IT',
+                    'Gives you a Cookie that is crusted with Nuts',
+                    'Gives you a Cookie that is rather Prickly, oh wait its just a Hedgehog'
                 ],
                 getCookie: function () {
                     var c = Math.floor(Math.random() * this.cookies.length);
