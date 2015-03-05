@@ -178,7 +178,7 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.2.9 beta",
+        version: "0.3.1 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
@@ -622,9 +622,9 @@
                                                 position: null,
                                                 songCount: 0
                                             };
-                                            API.moderateRemoveDJ(id);
                                             API.sendChat(subChat(basicBot.chat.afkremove, {name: name, time: time, position: pos, maximumafk: basicBot.settings.maximumAfk}));
                                         }
+                                        API.moderateRemoveDJ(user.id);
                                         user.afkWarningCount = 0;
                                     }
                                 }
@@ -2953,6 +2953,19 @@
                     }
                 }
             },
+            
+             testCommand: {
+                command: 'test',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.nuts)
+                    }
+                }
+             },
             
             twitchCommand: {
                 command: 'twitch',
