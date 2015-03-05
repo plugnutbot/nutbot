@@ -36,7 +36,7 @@
     "afkremove": "/me @%%NAME%%, you have been removed for being afk for %%TIME%%. You were at position %%POSITION%%. Chat at least once every %%MAXIMUMAFK%% minutes if you want to play a song.",
 
 
-    "caps": "/me @%%NAME%%, unglue your capslock button please.",
+    "caps": "/me @%%NAME%%, MOVE THAT NUT OFF YOUR CAPSLOCK BUTTON PLEASE.",
     "askskip": "/me @%%NAME%%, don't ask for skips.",
     "spam": "/me @%%NAME%%, please don't spam.",
     "roomadvertising": "/me @%%NAME%%, don't post links to other rooms please.",
@@ -146,6 +146,6 @@
     "website": "/me Please visit Squrrel website http://www.squirrel.tv",
     "youtube": "/me Subscribe to Squrrel on youtube http://www.youtube.com/squirrel",
     "twitter": "/me Follow Squrrel on twitter https://twitter.com/DaSquirrelsNuts",
-    "mods": "/me Check out the mod list at http://bit.ly/1yK2pym -- The most recent mods are at the bottom."
+    "mods": "/me Check out the mod list at http://bit.ly/1yK2pym -- The most recent mods are at the bottom.",
     "songstatistics": "/me %%ARTIST%% - %%TITLE%%: %%WOOTS%%W/%%GRABS%%G/%%MEHS%%M."
 }
