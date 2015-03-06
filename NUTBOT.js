@@ -669,6 +669,7 @@
                     API.sendChat('/me ' + msg);
                 }
             },
+            /**
             intervalMessage1: function () {
                 var interval1;
                 if (basicBot.settings.motd1Enabled) interval1 = basicBot.settings.motdInterval;
@@ -771,6 +772,7 @@
                     API.sendChat('/me ' + msg);
                 }
             },
+            **/
             updateBlacklists: function () {
                 for (var bl in basicBot.settings.blacklists) {
                     basicBot.room.blacklists[bl] = [];
