@@ -669,11 +669,11 @@
                     API.sendChat('/me ' + msg);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.motd1Enabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
-                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+            intervalMessage1: function () {
+                var interval1;
+                if (basicBot.settings.motd1Enabled) interval1 = basicBot.settings.motdInterval;
+                else interval1 = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval1) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd1Enabled) {
                         msg = basicBot.settings.motd1;
@@ -686,10 +686,10 @@
                     API.sendChat('/me ' + msg);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.mot2dEnabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
+            intervalMessage2: function () {
+                var interval2;
+                if (basicBot.settings.mot2dEnabled) interval2 = basicBot.settings.motdInterval;
+                else interval2 = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd2Enabled) {
@@ -703,10 +703,10 @@
                     API.sendChat('/me ' + msg);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.motd3Enabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
+            intervalMessage3: function () {
+                var interval3;
+                if (basicBot.settings.motd3Enabled) interval3 = basicBot.settings.motdInterval;
+                else interval3 = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd3Enabled) {
@@ -721,9 +721,9 @@
                 }
             },
             intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.mot4dEnabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
+                var interval4;
+                if (basicBot.settings.mot4dEnabled) interval4 = basicBot.settings.motdInterval;
+                else interval4 = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd4Enabled) {
@@ -737,10 +737,10 @@
                     API.sendChat('/me ' + msg);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.motd5Enabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
+            intervalMessage5: function () {
+                var interval5;
+                if (basicBot.settings.motd5Enabled) interval5 = basicBot.settings.motdInterval;
+                else interval5 = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd5Enabled) {
@@ -754,10 +754,10 @@
                     API.sendChat('/me ' + msg);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.motd6Enabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
+            intervalMessage6: function () {
+                var interval6;
+                if (basicBot.settings.motd6Enabled) interval6 = basicBot.settings.motdInterval;
+                else interval6 = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
                     if (basicBot.settings.motd6Enabled) {
