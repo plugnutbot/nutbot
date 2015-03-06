@@ -47,7 +47,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.5.2/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -170,13 +170,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.4.7 beta",
+        version: "0.5.2 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.5.2/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -184,7 +184,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.5.2/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -220,18 +220,6 @@
             motdEnabled:true,
             motdInterval: 0,
             motd:"",
-            motd1Enabled: true,
-            motd1: "",
-            motd2Enabled: true,
-            motd2: "",
-            motd3Enabled: true,
-            motd3: "",
-            motd4Enabled: true,
-            motd4: "",
-            motd5Enabled: true,
-            motd5: "",
-            motd6Enabled: true,
-            motd6: "",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -2018,7 +2006,7 @@
 
             linkCommand: {
                 command: 'link',
-                rank: 'dj',
+                rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2245,7 +2233,7 @@
                     }
                 }
             },
-
+            /**
             motd1Command: {
                 command: 'motd1',
                 rank: 'bouncer',
@@ -2385,7 +2373,7 @@
                     }
                 }
             },
-
+             **/
             moveCommand: {
                 command: 'move',
                 rank: 'bouncer',
@@ -2788,8 +2776,8 @@
                     }
                 }
             },
-						
-            togglemotd1Command: {
+            /**
+	    togglemotd1Command: {
                 command: 'togglemotd1',
                 rank: 'bouncer',
                 type: 'exact',
@@ -2908,7 +2896,7 @@
                     }
                 }
             },
-
+            **/
             unbanCommand: {
                 command: 'unban',
                 rank: 'bouncer',
