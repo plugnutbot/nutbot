@@ -47,7 +47,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.4.8/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -170,13 +170,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.4.7 beta",
+        version: "0.4.8 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.8/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -184,7 +184,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.7/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.8/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -669,6 +669,108 @@
                     API.sendChat('/me ' + msg);
                 }
             },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.motd1Enabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd1Enabled) {
+                        msg = basicBot.settings.motd1;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.mot2dEnabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd2Enabled) {
+                        msg = basicBot.settings.motd2;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.motd3Enabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd3Enabled) {
+                        msg = basicBot.settings.motd3;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.mot4dEnabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd4Enabled) {
+                        msg = basicBot.settings.motd4;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.motd5Enabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd5Enabled) {
+                        msg = basicBot.settings.motd5;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+            intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.motd6Enabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd6Enabled) {
+                        msg = basicBot.settings.motd6;
+                    }
+                    else {
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
             updateBlacklists: function () {
                 for (var bl in basicBot.settings.blacklists) {
                     basicBot.room.blacklists[bl] = [];
@@ -987,7 +1089,7 @@
                     return true;
                 }
                
-                 var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+                 var plugRoomLinkPatt = /(\b?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
                     if (perm === 0) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
@@ -1095,7 +1197,7 @@
                 basicBot.room.roomstats.chatmessages++;
             },
             spam: [
-                'hueh', 'https', '.co', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
+                'hueh', 'https*', '.co', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
                 'zueria', 'aehoo', 'aheu', 'alguem', 'algum', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'vaisefoder', 'huenaarea',
                 'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'pqp', 'puta', 'mulher', 'pula', 'retarda', 'caralho', 'filha', 'ppk',
                 'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
