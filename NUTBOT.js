@@ -218,22 +218,17 @@
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
             motd1Enabled: true,
-            motdInterval1: 0,
+            motdInterval: 0,
             motd1: "",
             motd2Enabled: true,
-            motdInterval2: 0,
             motd2: "",
             motd3Enabled: true,
-            motdInterval3: 0,
             motd3: "",
             motd4Enabled: true,
-            motdInterval4: 0,
             motd4: "",
             motd5Enabled: true,
-            motdInterval5: 0,
             motd5: "",
             motd6Enabled: true,
-            motdInterval6: 0,
             motd6: "",
             filterChat: true,
             etaRestriction: false,
@@ -655,109 +650,23 @@
                     clearTimeout(basicBot.room.cycleTimer);
                 }
             },
-            interval1Message: function () {
-                var interval1;
-                if (basicBot.settings.motd1Enabled) interval = basicBot.settings.motd1Interval;
-                else interval1 = basicBot.settings.messageInterval1;
-                if ((basicBot.room.roomstats.songCount % interval1) === 0 && basicBot.status) {
-                    var msg;
-                    if (basicBot.settings.motd1Enabled) {
-                        msg = basicBot.settings.motd1;
-                    }
-                    else {
-                        if (basicBot.settings.interval1Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval1Messages.length;
-                        msg = basicBot.settings.interval1Messages[messageNumber];
-                    }
-                    API.sendChat('/me ' + msg);
-                }
-            },
-                interval2Message: function () {
-                var interval2;
-                if (basicBot.settings.motd2Enabled) interval2 = basicBot.settings.motd2Interval;
-                else interval2 = basicBot.settings.messageInterval2;
-                if ((basicBot.room.roomstats.songCount % interval2) === 0 && basicBot.status) {
-                    var msg;
-                    if (basicBot.settings.motd2Enabled) {
-                        msg = basicBot.settings.motd2;
-                    }
-                    else {
-                        if (basicBot.settings.interval2Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval2Messages.length;
-                        msg = basicBot.settings.interval2Messages[messageNumber];
-                    }
-                    API.sendChat('/me ' + msg);
-                }
-            },
-               interval3Message: function () {
-                var interval3;
-                if (basicBot.settings.motd3Enabled) interval3 = basicBot.settings.motd3Interval;
-                else interval3 = basicBot.settings.message3Interval;
-                if ((basicBot.room.roomstats.songCount % interval3) === 0 && basicBot.status) {
-                    var msg;
-                    if (basicBot.settings.motd3Enabled) {
-                        msg = basicBot.settings.motd3;
-                    }
-                    else {
-                        if (basicBot.settings.interval3Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval3Messages.length;
-                        msg = basicBot.settings.interval3Messages[messageNumber];
-                    }
-                    API.sendChat('/me ' + msg);
-                }
-            },
-               interval4Message: function () {
-                var interval4;
-                if (basicBot.settings.motd4Enabled) interval4 = basicBot.settings.motd4Interval;
-                else interval4 = basicBot.settings.message4Interval;
+             intervalMessage: function () {
+                var interval;
+                if (basicBot.settings.motdEnabled) interval = basicBot.settings.motdInterval;
+                else interval = basicBot.settings.messageInterval;
                 if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
                     var msg;
-                    if (basicBot.settings.motd4Enabled) {
-                        msg = basicBot.settings.motd4;
+                    if (basicBot.settings.motdEnabled) {
+                        msg = basicBot.settings.motd;
                     }
                     else {
-                        if (basicBot.settings.interval4Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval4Messages.length;
-                        msg = basicBot.settings.interval4Messages[messageNumber];
+                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
+                        msg = basicBot.settings.intervalMessages[messageNumber];
                     }
                     API.sendChat('/me ' + msg);
                 }
             },
-               interval5Message: function () {
-                var interval5;
-                if (basicBot.settings.motd5Enabled) interval = basicBot.settings.motd5Interval;
-                else interval5 = basicBot.settings.message5Interval;
-                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
-                    var msg;
-                    if (basicBot.settings.motd5Enabled) {
-                        msg = basicBot.settings.motd5;
-                    }
-                    else {
-                        if (basicBot.settings.interval5Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval5Messages.length;
-                        msg = basicBot.settings.interval5Messages[messageNumber];
-                    }
-                    API.sendChat('/me ' + msg);
-                }
-            },
-               interval6Message: function () {
-                var interval6;
-                if (basicBot.settings.motd6Enabled) interval6 = basicBot.settings.motd6Interval;
-                else interval6 = basicBot.settings.message6Interval;
-                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
-                    var msg;
-                    if (basicBot.settings.motd6Enabled) {
-                        msg = basicBot.settings.motd6;
-                    }
-                    else {
-                        if (basicBot.settings.interval6Messages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval6Messages.length;
-                        msg = basicBot.settings.interval6Messages[messageNumber];
-                    }
-                    API.sendChat('/me ' + msg);
-                }
-            },
-
             updateBlacklists: function () {
                 for (var bl in basicBot.settings.blacklists) {
                     basicBot.room.blacklists[bl] = [];
@@ -2326,11 +2235,11 @@
                         if (!basicBot.settings.motd1Enabled) basicBot.settings.motd1Enabled = !basicBot.settings.motd1Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd1 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset1, {msg: basicBot.settings.motd1}));
+                            API.sendChat(subChat(basicBot.chat.motdset1, {msg1: basicBot.settings.motd1}));
                         }
                         else {
-                            basicBot.settings.motd1Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset1, {interval: basicBot.settings.motdInterval1}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
@@ -2350,11 +2259,11 @@
                         if (!basicBot.settings.motd2Enabled) basicBot.settings.motd2Enabled = !basicBot.settings.motd2Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd2 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset2, {msg: basicBot.settings.motd2}));
+                            API.sendChat(subChat(basicBot.chat.motdset2, {msg2: basicBot.settings.motd2}));
                         }
                         else {
-                            basicBot.settings.motd2Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset2, {interval: basicBot.settings.motdInterval2}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
@@ -2373,11 +2282,11 @@
                         if (!basicBot.settings.motd3Enabled) basicBot.settings.motd3Enabled = !basicBot.settings.motd3Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd3 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset3, {msg: basicBot.settings.motd3}));
+                            API.sendChat(subChat(basicBot.chat.motdset3, {msg3: basicBot.settings.motd3}));
                         }
                         else {
-                            basicBot.settings.motd3Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset3, {interval: basicBot.settings.motdInterval3}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
@@ -2396,11 +2305,11 @@
                         if (!basicBot.settings.motd4Enabled) basicBot.settings.motd4Enabled = !basicBot.settings.motd4Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd4 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset4, {msg: basicBot.settings.motd4}));
+                            API.sendChat(subChat(basicBot.chat.motdset4, {msg4: basicBot.settings.motd4}));
                         }
                         else {
-                            basicBot.settings.motd4Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset4, {interval: basicBot.settings.motdInterval4}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
@@ -2419,11 +2328,11 @@
                         if (!basicBot.settings.motd5Enabled) basicBot.settings.motd5Enabled = !basicBot.settings.motd5Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd5 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset5, {msg: basicBot.settings.motd5}));
+                            API.sendChat(subChat(basicBot.chat.motdset5, {msg5: basicBot.settings.motd5}));
                         }
                         else {
-                            basicBot.settings.motd5Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset5, {interval: basicBot.settings.motdInterval5}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
@@ -2442,11 +2351,11 @@
                         if (!basicBot.settings.motd6Enabled) basicBot.settings.motd6Enabled = !basicBot.settings.motd6Enabled;
                         if (isNaN(argument)) {
                             basicBot.settings.motd6 = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset6, {msg: basicBot.settings.motd6}));
+                            API.sendChat(subChat(basicBot.chat.motdset6, {msg6: basicBot.settings.motd6}));
                         }
                         else {
-                            basicBot.settings.motd6Interval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset6, {interval: basicBot.settings.motdInterval6}));
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
                         }
                     }
                 }
