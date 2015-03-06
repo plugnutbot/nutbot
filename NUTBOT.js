@@ -217,8 +217,10 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motd1Enabled: true,
+            motdEnabled:true,
             motdInterval: 0,
+            motd:"",
+            motd1Enabled: true,
             motd1: "",
             motd2Enabled: true,
             motd2: "",
@@ -2220,6 +2222,29 @@
                     }
                 }
             },
+              motdCommand: {
+                command: 'motd',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motdEnabled) basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset, {msg: basicBot.settings.motd}));
+                        }
+                        else {
+                            basicBot.settings.motdInterval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
+                        }
+                    }
+                }
+            },
 
             motd1Command: {
                 command: 'motd1',
@@ -2740,6 +2765,26 @@
                           return API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.blacklist}));
                         }
                         else return API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.blacklist}));
+                    }
+                }
+            },
+            
+             togglemotdCommand: {
+                command: 'togglemotd',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motdEnabled) {
+                            basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd}));
+                        }
+                        else {
+                            basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd}));
+                        }
                     }
                 }
             },
