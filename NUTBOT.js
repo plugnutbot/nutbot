@@ -1,10 +1,3 @@
-/**
- *Copyright 2014 Yemasthui
- *Modifications (including forks) of the code to fit personal needs are allowed only for personal use and should refer back to the original source.
- *This software is not for profit, any extension, or unauthorised person providing this software is not authorised to be in a position of any monetary gain from this use of this software. Any and all money gained under the use of the software (which includes donations) must be passed on to the original author.
- */
-
-
 (function () {
 
     API.getWaitListPosition = function(id){
@@ -173,8 +166,7 @@
         }
         return m;
     };
-    var botCreator = "Matthew (Yemasthui)";
-    var botMaintainer = "Whitt38"
+    var Makers = "This Bot Is What You Get When You Put Whitt38,Syhedghog,GreatGamingTV And ItsHarrySteel Minds Together :)";
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
@@ -184,7 +176,7 @@
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.2/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.3/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +184,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.2/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.3/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -225,9 +217,24 @@
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
-            motdEnabled: true,
-            motdInterval: 0,
-            motd: "",
+            motd1Enabled: true,
+            motd1Interval: 0,
+            motd1: "",
+            motd2Enabled: true,
+            motd2Interval: 0,
+            motd2: "",
+            motd3Enabled: true,
+            motd3Interval: 0,
+            motd3: "",
+            motd4Enabled: true,
+            motd4Interval: 0,
+            motd4: "",
+            motd5Enabled: true,
+            motd5Interval: 0,
+            motd5: "",
+            motd6Enabled: true,
+            motd6Interval: 0,
+            motd6: "",
             filterChat: true,
             etaRestriction: false,
             welcome: true,
@@ -236,7 +243,6 @@
             themeLink: null,
             intervalMessages: ["Welcome to the Squirrel Plug DJ Room"],
             messageInterval: 4,
-            songstats: false,
             songstats: false,
             commandLiteral: "!",
             blacklists: {
@@ -649,23 +655,109 @@
                     clearTimeout(basicBot.room.cycleTimer);
                 }
             },
-            intervalMessage: function () {
-                var interval;
-                if (basicBot.settings.motdEnabled) interval = basicBot.settings.motdInterval;
-                else interval = basicBot.settings.messageInterval;
-                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+            interval1Message: function () {
+                var interval1;
+                if (basicBot.settings.motd1Enabled) interval = basicBot.settings.motd1Interval;
+                else interval1 = basicBot.settings.messageInterval1;
+                if ((basicBot.room.roomstats.songCount % interval1) === 0 && basicBot.status) {
                     var msg;
-                    if (basicBot.settings.motdEnabled) {
-                        msg = basicBot.settings.motd;
+                    if (basicBot.settings.motd1Enabled) {
+                        msg = basicBot.settings.motd1;
                     }
                     else {
-                        if (basicBot.settings.intervalMessages.length === 0) return void (0);
-                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.intervalMessages.length;
-                        msg = basicBot.settings.intervalMessages[messageNumber];
+                        if (basicBot.settings.interval1Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval1Messages.length;
+                        msg = basicBot.settings.interval1Messages[messageNumber];
                     }
                     API.sendChat('/me ' + msg);
                 }
             },
+                interval2Message: function () {
+                var interval2;
+                if (basicBot.settings.motd2Enabled) interval2 = basicBot.settings.motd2Interval;
+                else interval2 = basicBot.settings.messageInterval2;
+                if ((basicBot.room.roomstats.songCount % interval2) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd2Enabled) {
+                        msg = basicBot.settings.motd2;
+                    }
+                    else {
+                        if (basicBot.settings.interval2Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval2Messages.length;
+                        msg = basicBot.settings.interval2Messages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+               interval3Message: function () {
+                var interval3;
+                if (basicBot.settings.motd3Enabled) interval3 = basicBot.settings.motd3Interval;
+                else interval3 = basicBot.settings.message3Interval;
+                if ((basicBot.room.roomstats.songCount % interval3) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd3Enabled) {
+                        msg = basicBot.settings.motd3;
+                    }
+                    else {
+                        if (basicBot.settings.interval3Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval3Messages.length;
+                        msg = basicBot.settings.interval3Messages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+               interval4Message: function () {
+                var interval4;
+                if (basicBot.settings.motd4Enabled) interval4 = basicBot.settings.motd4Interval;
+                else interval4 = basicBot.settings.message4Interval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd4Enabled) {
+                        msg = basicBot.settings.motd4;
+                    }
+                    else {
+                        if (basicBot.settings.interval4Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval4Messages.length;
+                        msg = basicBot.settings.interval4Messages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+               interval5Message: function () {
+                var interval5;
+                if (basicBot.settings.motd5Enabled) interval = basicBot.settings.motd5Interval;
+                else interval5 = basicBot.settings.message5Interval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd5Enabled) {
+                        msg = basicBot.settings.motd5;
+                    }
+                    else {
+                        if (basicBot.settings.interval5Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval5Messages.length;
+                        msg = basicBot.settings.interval5Messages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+               interval6Message: function () {
+                var interval6;
+                if (basicBot.settings.motd6Enabled) interval6 = basicBot.settings.motd6Interval;
+                else interval6 = basicBot.settings.message6Interval;
+                if ((basicBot.room.roomstats.songCount % interval) === 0 && basicBot.status) {
+                    var msg;
+                    if (basicBot.settings.motd6Enabled) {
+                        msg = basicBot.settings.motd6;
+                    }
+                    else {
+                        if (basicBot.settings.interval6Messages.length === 0) return void (0);
+                        var messageNumber = basicBot.room.roomstats.songCount % basicBot.settings.interval6Messages.length;
+                        msg = basicBot.settings.interval6Messages[messageNumber];
+                    }
+                    API.sendChat('/me ' + msg);
+                }
+            },
+
             updateBlacklists: function () {
                 for (var bl in basicBot.settings.blacklists) {
                     basicBot.room.blacklists[bl] = [];
@@ -1092,7 +1184,7 @@
                 basicBot.room.roomstats.chatmessages++;
             },
             spam: [
-                'hueh', 'hu3', 'brbr', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
+                'hueh', 'https', '.co', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
                 'zueria', 'aehoo', 'aheu', 'alguem', 'algum', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'vaisefoder', 'huenaarea',
                 'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'pqp', 'puta', 'mulher', 'pula', 'retarda', 'caralho', 'filha', 'ppk',
                 'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo', 'foda'
@@ -2220,8 +2312,8 @@
                 }
             },
 
-            motdCommand: {
-                command: 'motd',
+            motd1Command: {
+                command: 'motd1',
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2229,16 +2321,131 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         var msg = chat.message;
-                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD: ' + basicBot.settings.motd);
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD1: ' + basicBot.settings.motd);
                         var argument = msg.substring(cmd.length + 1);
-                        if (!basicBot.settings.motdEnabled) basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
+                        if (!basicBot.settings.motd1Enabled) basicBot.settings.motd1Enabled = !basicBot.settings.motd1Enabled;
                         if (isNaN(argument)) {
-                            basicBot.settings.motd = argument;
-                            API.sendChat(subChat(basicBot.chat.motdset, {msg: basicBot.settings.motd}));
+                            basicBot.settings.motd1 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset1, {msg: basicBot.settings.motd1}));
                         }
                         else {
-                            basicBot.settings.motdInterval = argument;
-                            API.sendChat(subChat(basicBot.chat.motdintervalset, {interval: basicBot.settings.motdInterval}));
+                            basicBot.settings.motd1Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset1, {interval: basicBot.settings.motdInterval1}));
+                        }
+                    }
+                }
+            }
+             motd2Command: {
+                command: 'motd2',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD2: ' + basicBot.settings.motd2);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motd2Enabled) basicBot.settings.motd2Enabled = !basicBot.settings.motd2Enabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd2 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset2, {msg: basicBot.settings.motd2}));
+                        }
+                        else {
+                            basicBot.settings.motd2Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset2, {interval: basicBot.settings.motdInterval2}));
+                        }
+                    }
+                }
+            },
+            motd3Command: {
+                command: 'motd3',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD3: ' + basicBot.settings.motd3);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motd3Enabled) basicBot.settings.motd3Enabled = !basicBot.settings.motd3Enabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd3 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset3, {msg: basicBot.settings.motd3}));
+                        }
+                        else {
+                            basicBot.settings.motd3Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset3, {interval: basicBot.settings.motdInterval3}));
+                        }
+                    }
+                }
+            },
+             motd4Command: {
+                command: 'motd4',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD4: ' + basicBot.settings.motd4);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motd4Enabled) basicBot.settings.motd4Enabled = !basicBot.settings.motd4Enabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd4 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset4, {msg: basicBot.settings.motd4}));
+                        }
+                        else {
+                            basicBot.settings.motd4Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset4, {interval: basicBot.settings.motdInterval4}));
+                        }
+                    }
+                }
+            },
+            motd5Command: {
+                command: 'motd5',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD5: ' + basicBot.settings.motd5);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motd5Enabled) basicBot.settings.motd5Enabled = !basicBot.settings.motd5Enabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd5 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset5, {msg: basicBot.settings.motd5}));
+                        }
+                        else {
+                            basicBot.settings.motd5Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset5, {interval: basicBot.settings.motdInterval5}));
+                        }
+                    }
+                }
+            },
+            motd6Command: {
+                command: 'motd6',
+                rank: 'bouncer',
+                type: 'startsWith',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        var msg = chat.message;
+                        if (msg.length <= cmd.length + 1) return API.sendChat('/me MotD6: ' + basicBot.settings.motd6);
+                        var argument = msg.substring(cmd.length + 1);
+                        if (!basicBot.settings.motd6Enabled) basicBot.settings.motd6Enabled = !basicBot.settings.motd6Enabled;
+                        if (isNaN(argument)) {
+                            basicBot.settings.motd6 = argument;
+                            API.sendChat(subChat(basicBot.chat.motdset6, {msg: basicBot.settings.motd6}));
+                        }
+                        else {
+                            basicBot.settings.motd6Interval = argument;
+                            API.sendChat(subChat(basicBot.chat.motdintervalset6, {interval: basicBot.settings.motdInterval6}));
                         }
                     }
                 }
@@ -2468,7 +2675,7 @@
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        API.sendChat('/me This bot was created by ' + botCreator + ', but is now maintained by ' + botMaintainer + ".");
+                        API.sendChat('/me ' + Makers + ".");
                     }
                 }
             },
@@ -2627,21 +2834,121 @@
                 }
             },
 						
-            togglemotdCommand: {
-                command: 'togglemotd',
+            togglemotd1Command: {
+                command: 'togglemotd1',
                 rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
-                        if (basicBot.settings.motdEnabled) {
-                            basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
-                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd}));
+                        if (basicBot.settings.motd1Enabled) {
+                            basicBot.settings.motd1Enabled = !basicBot.settings.motd1Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd1}));
                         }
                         else {
-                            basicBot.settings.motdEnabled = !basicBot.settings.motdEnabled;
-                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd}));
+                            basicBot.settings.motd1Enabled = !basicBot.settings.motd1Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd1}));
+                        }
+                    }
+                }
+            },
+						
+            togglemotd2Command: {
+                command: 'togglemotd2',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motd2Enabled) {
+                            basicBot.settings.motd2Enabled = !basicBot.settings.motd2Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd2}));
+                        }
+                        else {
+                            basicBot.settings.motd2Enabled = !basicBot.settings.motd2Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd2}));
+                        }
+                    }
+                }
+            },
+						
+            togglemotd3Command: {
+                command: 'togglemotd3',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motd3Enabled) {
+                            basicBot.settings.motd3Enabled = !basicBot.settings.motd3Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd3}));
+                        }
+                        else {
+                            basicBot.settings.motd3Enabled = !basicBot.settings.motd3Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd3}));
+                        }
+                    }
+                }
+            },
+						
+            togglemotd4Command: {
+                command: 'togglemotd4',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motd4Enabled) {
+                            basicBot.settings.motd4Enabled = !basicBot.settings.motd4Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd4}));
+                        }
+                        else {
+                            basicBot.settings.motd4Enabled = !basicBot.settings.motd4Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd4}));
+                        }
+                    }
+                }
+            },
+						
+            togglemotd5Command: {
+                command: 'togglemotd5',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motd5Enabled) {
+                            basicBot.settings.motd5Enabled = !basicBot.settings.motd5Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd5}));
+                        }
+                        else {
+                            basicBot.settings.motd5Enabled = !basicBot.settings.motd5Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd5}));
+                        }
+                    }
+                }
+            },
+						
+            togglemotd6Command: {
+                command: 'togglemotd6',
+                rank: 'bouncer',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        if (basicBot.settings.motd6Enabled) {
+                            basicBot.settings.motd6Enabled = !basicBot.settings.motd6Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleoff, {name: chat.un, 'function': basicBot.chat.motd6}));
+                        }
+                        else {
+                            basicBot.settings.motd6Enabled = !basicBot.settings.motd6Enabled;
+                            API.sendChat(subChat(basicBot.chat.toggleon, {name: chat.un, 'function': basicBot.chat.motd6}));
                         }
                     }
                 }
