@@ -2334,7 +2334,8 @@
                         }
                     }
                 }
-            }
+            },
+            
              motd2Command: {
                 command: 'motd2',
                 rank: 'bouncer',
