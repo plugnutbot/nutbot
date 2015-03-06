@@ -47,7 +47,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.4.4/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.4.5/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -176,7 +176,7 @@
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.4/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.5/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -184,7 +184,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.4/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.4.5/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -218,22 +218,22 @@
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
             motd1Enabled: true,
-            motd1Interval: 0,
+            motdInterval1: 0,
             motd1: "",
             motd2Enabled: true,
-            motd2Interval: 0,
+            motdInterval2: 0,
             motd2: "",
             motd3Enabled: true,
-            motd3Interval: 0,
+            motdInterval3: 0,
             motd3: "",
             motd4Enabled: true,
-            motd4Interval: 0,
+            motdInterval4: 0,
             motd4: "",
             motd5Enabled: true,
-            motd5Interval: 0,
+            motdInterval5: 0,
             motd5: "",
             motd6Enabled: true,
-            motd6Interval: 0,
+            motdInterval6: 0,
             motd6: "",
             filterChat: true,
             etaRestriction: false,
@@ -1411,7 +1411,7 @@
 
             addCommand: {
                 command: 'add',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1455,7 +1455,7 @@
 
             afkremovalCommand: {
                 command: 'afkremoval',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1540,7 +1540,7 @@
 
             autoskipCommand: {
                 command: 'autoskip',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -1560,7 +1560,7 @@
             },
 
             autowootCommand: {
-                command: 'autowoot',
+                command: 'bg',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -1920,7 +1920,7 @@
 
             deletechatCommand: {
                 command: 'deletechat',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2137,7 +2137,7 @@
 
             lockCommand: {
                 command: 'lock',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2150,7 +2150,7 @@
 
             lockdownCommand: {
                 command: 'lockdown',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2454,7 +2454,7 @@
 
             moveCommand: {
                 command: 'move',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2535,7 +2535,7 @@
 
             removeCommand: {
                 command: 'remove',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2586,7 +2586,7 @@
 
             rouletteCommand: {
                 command: 'roulette',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2650,7 +2650,7 @@
 
             songstatsCommand: {
                 command: 'songstats',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2746,7 +2746,7 @@
 
             swapCommand: {
                 command: 'swap',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2995,7 +2995,7 @@
 
             unlockCommand: {
                 command: 'unlock',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -3123,7 +3123,7 @@
 
             welcomeCommand: {
                 command: 'welcome',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
