@@ -285,7 +285,9 @@
                 id: [],
                 position: []
             },
-            blacklists: {blacklistsong},
+            blacklists: {
+            	
+            },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
             roulette: {
