@@ -240,7 +240,7 @@
             songstats: false,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleNSFWlist.json",
+                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.5.8/blacklist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
             }
         },
