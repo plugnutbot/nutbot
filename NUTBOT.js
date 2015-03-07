@@ -285,7 +285,7 @@
                 id: [],
                 position: []
             },
-            blacklists: {
+            blacklists: {'blsong'
             	
             },
             newBlacklisted: [],
