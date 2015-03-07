@@ -241,7 +241,7 @@
             commandLiteral: "!",
             blacklists: {
                 NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.5.9/blacklist.json",
-                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json
+                OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json"
                 Coms: "https://github.com/plugnutbot/nutbot/blob/0.5.9/blacklist.json"
             }
         },
