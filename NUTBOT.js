@@ -2883,7 +2883,7 @@
                         API.sendChat(basicBot.chat.english)
                     }
                 }
-            }
+            },
             
             twitchCommand: {
                 command: 'twitch',
