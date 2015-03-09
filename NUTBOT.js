@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.6.2/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.7.0/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.6.3 beta just 4 squirrel",
+        version: "0.7.0 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.6.3/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.0/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.6.3/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.0/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -230,7 +230,7 @@
             motd: "",
             filterChat: true,
             etaRestriction: false,
-            welcome: true,
+            welcome: false,
             opLink: null,
             rulesLink: true,
             themeLink: null,
@@ -240,9 +240,9 @@
             songstats: false,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.6.3/blacklist.json",
+                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.0/blacklist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json",
-                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.6.3/blacklist.json"
+                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.0/blacklist.json"
             }
         },
         room: {
@@ -259,7 +259,7 @@
             autodisableInterval: null,
             autodisableFunc: function () {
                 if (basicBot.status && basicBot.settings.autodisable) {
-                    API.sendChat('');
+                    API.sendChat('Website:http://squirrel.tv/');
                 }
             },
             queueing: 0,
@@ -290,7 +290,7 @@
            },
             newBlacklisted: [],
             newBlacklistedSongFunction: null,
-            roulette: {
+           /** roulette: {
                 rouletteStatus: false,
                 participants: [],
                 countdown: null,
@@ -316,6 +316,7 @@
                 }
             }
         },
+        **/
         User: function (id, name) {
             this.id = id;
             this.username = name;
@@ -1889,6 +1890,19 @@
                     if (!basicBot.commands.executable(this.rank, chat)) return void (0);
                     else {
                         API.sendChat(basicBot.chat.facebook)
+                    }
+                }
+            },
+            
+             twitterCommand: {
+                command: 'twitter',
+                rank: 'user',
+                type: 'exact',
+                functionality: function (chat, cmd) {
+                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
+                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
+                    else {
+                        API.sendChat(basicBot.chat.twitter)
                     }
                 }
             },
