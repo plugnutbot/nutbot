@@ -127,7 +127,7 @@
     "pong": "/me Pong!",
     "reload": "/me Be right back.",
     "removenotinwl": "/me [@%%NAME%%] Specified user @%%USERNAME%% is not in the waitlist.",
-    "rules": "/me Please find the room rules here in the community description ",
+    "rules": "/me RULES: No Swearing in Chat Do not post links without approval from a member of staff, Play only Music in english only, Play only Music that is Suitable for all Ages, No repeat's until after 2 hours, You will be skipped if your video is found not suitable ",
     "sessionstats": "/me [@%%NAME%%] Total woots: %%WOOTS%%, total mehs: %%MEHS%%, total grabs: %%GRABS%%.",
     "skip": "/me [%%NAME%% used skip.]",
     "madeby": "/me This bot was made by %%NAME%%.",
