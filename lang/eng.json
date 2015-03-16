@@ -5,7 +5,7 @@
     "datarestored": "Previously stored data successfully retrieved.",
     "greyuser": "Only bouncers and up can run a bot.",
     "bouncer": "The bot can't move people when it's run as a bouncer.",
-    "online": "/me %%BOTNAME%% v%%VERSION%% online!",
+    "online": "/me NUTBOT v%%VERSION%% online!",
 
 
     "welcome": "/me Welcome %%NAME%% To The NutHouse",
@@ -127,7 +127,7 @@
     "pong": "/me Pong!",
     "reload": "/me Be right back.",
     "removenotinwl": "/me [@%%NAME%%] Specified user @%%USERNAME%% is not in the waitlist.",
-    "rules": "/me Please find the room rules here in the community description ",
+    "rules": "/me Please find the room rules here http://www.squirreldj.com/rules.html ",
     "sessionstats": "/me [@%%NAME%%] Total woots: %%WOOTS%%, total mehs: %%MEHS%%, total grabs: %%GRABS%%.",
     "skip": "/me [%%NAME%% used skip.]",
     "madeby": "/me This bot was made by %%NAME%%.",
@@ -143,9 +143,9 @@
     "unmuterank": "/me [@%%NAME%%] You can't unmute persons with an equal or higher rank than you.",
     "commandscd": "/me [@%%NAME%%] The cooldown for commands by users is now set to %%TIME%% seconds.",
     "voteratio": "/me [@%%NAME%%] @%%USERNAME%% ~ woots: %%WOOT%%, mehs: %%MEHS%%, ratio (w/m): %%RATIO%%.",
-    "website": "/me Please visit Squrrel website http://www.squirrel.tv",
-    "youtube": "/me Subscribe to Squrrel on youtube http://www.youtube.com/squirrel",
-    "twitter": "/me Follow Squrrel on twitter https://twitter.com/DaSquirrelsNuts",
+    "website": "/me Please visit Squirrel website http://www.squirrel.tv",
+    "youtube": "/me Subscribe to Squirrel on youtube http://www.youtube.com/squirrel",
+    "twitter": "/me Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts",
     "mods": "/me Check out the mod list at http://bit.ly/1yK2pym -- The most recent mods are at the bottom.",
     "songstatistics": "/me That Was %%ARTIST%% - %%TITLE%% And Have Scored %%WOOTS%% WOOTS/%%GRABS%% GRABS/%%MEHS%% MEHS."
 }
