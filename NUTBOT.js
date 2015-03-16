@@ -1623,7 +1623,7 @@
             },
             **/
             commandsCommand: {
-                command: 'commands',
+                command: 'commandsmmmmmmmmmmmmmm',
                 rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
@@ -2015,7 +2015,7 @@
 
             linkCommand: {
                 command: 'link',
-                rank: 'dj',
+                rank: 'user',
                 type: 'exact',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2203,7 +2203,7 @@
 
             maxlengthCommand: {
                 command: 'maxlength',
-                rank: 'manager',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2246,7 +2246,7 @@
 
             moveCommand: {
                 command: 'move',
-                rank: 'mod',
+                rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
                     if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
@@ -2774,7 +2774,7 @@
             },
 
             usercommandsCommand: {
-                command: 'usercommands',
+                command: 'usercommands22222',
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
