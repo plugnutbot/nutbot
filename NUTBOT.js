@@ -178,13 +178,13 @@
     var botCreatorIDs = ["3851534", "3934992", "4105209"];
 
     var basicBot = {
-        version: "0.7.3 beta",
+        version: "0.7.4 beta",
         status: false,
         name: "NUTBOT",
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.4/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.4/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -240,9 +240,9 @@
             songstats: false,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/blacklist.json",
+                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.4/blacklist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json",
-                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/blacklist.json"
+                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.4/blacklist.json"
             }
         },
         room: {
@@ -952,7 +952,7 @@
                 return true;
             }
             msg = msg.toLowerCase();
-            if (msg === '@"NUTBOT"'
+            if (msg === '@"NUTBOT"') {
                 API.sendChat(subChat(basicBot.chat.askskip, {name: chat.un}));
                 return true;
             }
