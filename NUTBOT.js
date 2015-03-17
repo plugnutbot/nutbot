@@ -54,7 +54,7 @@
     var loadChat = function (cb) {
         if (!cb) cb = function () {
         };
-        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.7.2/lang/langIndex.json", function (json) {
+        $.get("https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/lang/langIndex.json", function (json) {
             var link = basicBot.chatLink;
             if (json !== null && typeof json !== "undefined") {
                 langIndex = json;
@@ -184,7 +184,7 @@
         loggedInID: null,
         scriptLink: "you are not geting it ask whitt",
         cmdLink: "some may not work http://goo.gl/wplrO9",
-        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.2/lang/eng.json",
+        chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/lang/eng.json",
         chat: null,
         loadChat: loadChat,
         retrieveSettings: retrieveSettings,
@@ -192,7 +192,7 @@
         settings: {
             botName: "NUTBOT",
             language: "english",
-            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.2/lang/eng.json",
+            chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/lang/eng.json",
             startupCap: 200, // 1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
@@ -240,9 +240,9 @@
             songstats: false,
             commandLiteral: "!",
             blacklists: {
-                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.2/blacklist.json",
+                NSFW: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/blacklist.json",
                 OP: "https://rawgit.com/Yemasthui/basicBot-customization/master/blacklists/ExampleOPlist.json",
-                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.2/blacklist.json"
+                Coms: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.3/blacklist.json"
             }
         },
         room: {
