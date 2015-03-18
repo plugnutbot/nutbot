@@ -1004,6 +1004,7 @@
                         API.moderateDeleteChat(chat.cid);
                         return true;
                     }
+                 }
                
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
