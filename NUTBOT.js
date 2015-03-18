@@ -997,7 +997,7 @@
                     }
                 }
                                  
-                 var LinkPatt = /(^|[\s\n]|<br\/?>)((?:https?|ftp):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
+                 var LinkPatt = /(^|[\s\n]|<br\/?>)((?:https?|ftp|http):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
                  if (LinkPatt.exec(msg)) {
                     if (perm === 0) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
@@ -1005,6 +1005,16 @@
                         return true;
                     }
                  }
+                 
+                 var wwwLinkPatt = /(^|[\s\n]|<br\/?>)((?:www?).\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
+                 if (wwwLinkPatt.exec(msg)) {
+                    if (perm === 0) {
+                        API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
+                        API.moderateDeleteChat(chat.cid);
+                        return true;
+                    }
+                 }
+               
                
                 if (msg.indexOf('http://adf.ly/') > -1) {
                     API.moderateDeleteChat(chat.cid);
