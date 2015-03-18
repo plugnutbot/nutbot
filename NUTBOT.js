@@ -997,7 +997,7 @@
                     }
                 }
                                  
-                 var LinkPatt = /(\bhttps?:\/\/(www.)?\.[-A-Z0-9][-A-Z0-9+&@#\/%?=~_|:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
+                 var LinkPatt = /(^|[\s\n]|<br\/?>)((?:https?|ftp):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
                  if (LinkPatt.exec(msg)) {
                     if (perm === 0) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
