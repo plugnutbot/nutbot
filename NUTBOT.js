@@ -1014,6 +1014,15 @@
                         return true;
                     }
                  }
+                 
+                 var wwwLinkPatt = /(^|[\s\n]|<br\/?>)(([-A-Z0-9+&@#\/%?=~_|:,.;].(?:https?|co|com|eu)*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
+                 if (wwwLinkPatt.exec(msg)) {
+                    if (perm === 0) {
+                        API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
+                        API.moderateDeleteChat(chat.cid);
+                        return true;
+                    }
+                 }
                
                
                 if (msg.indexOf('http://adf.ly/') > -1) {
