@@ -147,5 +147,6 @@
     "youtube": "/me Subscribe to Squirrel on youtube http://www.youtube.com/squirrel",
     "twitter": "/me Follow Squirrel on twitter https://twitter.com/DaSquirrelsNuts",
     "mods": "/me Check out the mod list at http://bit.ly/1yK2pym -- The most recent mods are at the bottom.",
-    "songstatistics": "/me That Was %%ARTIST%% - %%TITLE%% And Have Scored %%WOOTS%% WOOTS/%%GRABS%% GRABS/%%MEHS%% MEHS."
+    "songstatistics": "/me That Was %%ARTIST%% - %%TITLE%% And Have Scored %%WOOTS%% WOOTS/%%GRABS%% GRABS/%%MEHS%% MEHS.",
+    "links": "/me links require pre-approval by a nutter AKA: Bouncers,Managers,Co-Hosts,Host Sorry!"
 }
