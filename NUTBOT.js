@@ -1099,12 +1099,12 @@
                 'hueh', 'hu3', 'brbr', 'heu', 'brbr', 'kkkk', 'spoder', 'mafia', 'zuera', 'zueira',
                 'zueria', 'aehoo', 'aheu', 'alguem', 'algum', 'brazil', 'zoeira', 'fuckadmins', 'affff', 'vaisefoder', 'huenaarea',
                 'hitler', 'ashua', 'ahsu', 'ashau', 'lulz', 'huehue', 'hue', 'huehuehue', 'merda', 'pqp', 'puta', 'mulher', 'pula', 'retarda', 'caralho', 'filha', 'ppk',
-                'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo','.com','.co.uk','.net', '.tv', '.org', '.int', '.edu', '.ac', '.ad', '.ae'
+                'gringo', 'fuder', 'foder', 'hua', 'ahue', 'modafuka', 'modafoka', 'mudafuka', 'mudafoka', 'ooooooooooooooo','\.com','\.co\.uk','\.net', '\.tv', '\.org', '\.int', '\.edu', '\.ac', '\.ad', '\.ae'
             ],
             curses: [
                 'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka','shit','fuck', 'shit', 'damn', 'bloody',
                 'bitch', 'piss', 'crap', 'cunt', 'damn', 'dick', 'cock', 'darn', 'pussy', 'asshole', 'bastard', 'fag',
-                'bugger', 'douche', 'slut', 'bollock', 'arsehole', 'bollocks', '.com','.co.uk','.net', '.tv', '.org', '.int', '.edu', '.ac', '.ad', '.ae'
+                'bugger', 'douche', 'slut', 'bollock', 'arsehole', 'bollocks'
             ],
         },
         connectAPI: function () {
