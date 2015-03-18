@@ -1104,7 +1104,8 @@
             curses: [
                 'nigger', 'faggot', 'nigga', 'niqqa', 'motherfucker', 'modafocka','shit','fuck', 'shit', 'damn', 'bloody',
                 'bitch', 'piss', 'crap', 'cunt', 'damn', 'dick', 'cock', 'darn', 'pussy', 'asshole', 'bastard', 'fag',
-                'bugger', 'douche', 'slut', 'bollock', 'arsehole', 'bollocks'
+                'bugger', 'douche', 'slut', 'bollock', 'arsehole', 'bollocks', '.com','.co.uk','.net', '.tv', '.org', '.int', '.edu', '.ac', '.ad', '.ae'
+            ],
             ]
         },
         connectAPI: function () {
