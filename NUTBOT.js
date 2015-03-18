@@ -990,7 +990,7 @@
                
                  var plugRoomLinkPatt = /(\bhttps?:\/\/(www.)?plug\.dj[-A-Z0-9+&@#\/%?=~_|:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
                  if (plugRoomLinkPatt.exec(msg)) {
-                    if (perm === 0) {
+                    if (perm < 2) {
                         API.sendChat(subChat(basicBot.chat.roomadvertising, {name: chat.un}));
                         API.moderateDeleteChat(chat.cid);
                         return true;
@@ -999,7 +999,7 @@
                                  
                  var LinkPatt = /(^|[\s\n]|<br\/?>)((?:https?|ftp|http):\/\/[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
                  if (LinkPatt.exec(msg)) {
-                    if (perm === 0) {
+                    if (perm < 2) {
                         API.sendChat(subChat(basicBot.chat.links, {name: chat.un}));
                         API.moderateDeleteChat(chat.cid);
                         return true;
@@ -1008,7 +1008,7 @@
                  
                  var wwwLinkPatt = /(^|[\s\n]|<br\/?>)((?:www?).[\-A-Z0-9+\u0026\u2019@#\/%?=()~_|!:,.;]*[\-A-Z0-9+\u0026@#\/%=~()_|])/gi;
                  if (wwwLinkPatt.exec(msg)) {
-                    if (perm === 0) {
+                    if (perm < 2) {
                         API.sendChat(subChat(basicBot.chat.links, {name: chat.un}));
                         API.moderateDeleteChat(chat.cid);
                         return true;
