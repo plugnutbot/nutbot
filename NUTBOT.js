@@ -1896,18 +1896,18 @@
                         var ch = '/me @' + name + ' ';
                         switch(lang){
                             case 'en': break;
-                            case 'da': ch += 'Vær venlig at tale engelsk.'; break;
-                            case 'de': ch += 'Bitte sprechen Sie Englisch.'; break;
-                            case 'es': ch += 'Por favor, hable Inglés.'; break;
-                            case 'fr': ch += 'Parlez anglais, s\'il vous plaît.'; break;
-                            case 'nl': ch += 'Spreek Engels, alstublieft.'; break;
-                            case 'pl': ch += 'Proszę mówić po angielsku.'; break;
-                            case 'pt': ch += 'Por favor, fale Inglês.'; break;
-                            case 'sk': ch += 'Hovorte po anglicky, prosím.'; break;
-                            case 'cs': ch += 'Mluvte prosím anglicky.'; break;
-                            case 'sr': ch += 'Молим Вас, говорите енглески.'; break;                                  
+                            case 'da': ch += 'Tal og afspille musik på engelsk.'; break;
+                            case 'de': ch += 'Bitte sprechen und Musik in Englisch.'; break;
+                            case 'es': ch += 'Por favor, hablar y tocar música en Inglés .'; break;
+                            case 'fr': ch += 'Se il vous plaît parler et jouer de la musique en anglais .'; break;
+                            case 'nl': ch += 'Gelieve spreken en muziek af te spelen in het Engels .'; break;
+                            case 'pl': ch += 'Proszę mówić i grać muzykę w języku angielskim .'; break;
+                            case 'pt': ch += 'Por favor, falar e tocar música em Inglês .'; break;
+                            case 'sk': ch += 'Prosím , hovoriť a hrať hudbu v anglickom jazyku .'; break;
+                            case 'cs': ch += 'Prosím, mluvit a hrát hudbu v anglickém jazyce .'; break;
+                            case 'sr': ch += 'Молимо вас да говорите и пушта музику на енглеском језику . Molimo vas da govorite i pušta muziku na engleskom jeziku .'; break;                                  
                         }
-                        ch += ' English please.';
+                        ch += ' Please speak and play music in English.';
                         API.sendChat(ch);
                     }
                 }
