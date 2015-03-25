@@ -193,7 +193,7 @@
             botName: "NUTBOT",
             language: "english",
             chatLink: "https://cdn.rawgit.com/plugnutbot/nutbot/0.7.6/lang/eng.json",
-            startupCap: 200, // 1-200
+            startupCap: 1, //1-200
             startupVolume: 0, // 0-100
             startupEmoji: false, // true or false
             maximumAfk: 120,
@@ -207,21 +207,19 @@
             cycleGuard: true,
             maximumCycletime: 10,
             voteSkip: false,
-            voteSkipLimit: 8,
+            voteSkipLimit: 4,
             timeGuard: true,
             maximumSongLength: 10,
             autodisable: true,
             commandCooldown: 30,
-            usercommandsEnabled: true,
+            usercommandsEnabled: false,
             lockskipPosition: 3,
             lockskipReasons: [
-                ["theme", "This song does not fit the room theme. "],
                 ["op", "This song is on the OP list. "],
-                ["history", "This song is in the history. "],
-                ["mix", "You played a mix, which is against the rules. "],
+                ["rules", "You played a song, which is against the rules. "],
                 ["sound", "The song you played had bad sound quality or no sound. "],
-                ["nsfw", "The song you contained was NSFW (image or sound). "],
-                ["unavailable", "The song you played was not available for some users. "]
+                ["copy", "The song you played was not available for some users. "],
+                ["ban", "The song you played has been banned from this room."]
             ],
             afkpositionCheck: 15,
             afkRankCheck: "ambassador",
@@ -2123,7 +2121,7 @@
             },
 
             lockskipCommand: {
-                command: 'lockskip',
+                command: 'skip',
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2192,7 +2190,7 @@
             },
 
             lockskipposCommand: {
-                command: 'lockskippos',
+                command: 'skippos',
                 rank: 'manager',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2537,25 +2535,6 @@
                 }
             },
 
-            skipCommand: {
-                command: 'skip',
-                rank: 'bouncer',
-                type: 'exact',
-                functionality: function (chat, cmd) {
-                    if (this.type === 'exact' && chat.message.length !== cmd.length) return void (0);
-                    if (!basicBot.commands.executable(this.rank, chat)) return void (0);
-                    else {
-                        API.sendChat(subChat(basicBot.chat.skip, {name: chat.un}));
-                        API.moderateForceSkip();
-                        basicBot.room.skippable = false;
-                        setTimeout(function () {
-                            basicBot.room.skippable = true
-                        }, 5 * 1000);
-
-                    }
-                }
-            },
-
             songstatsCommand: {
                 command: 'songstats',
                 rank: 'mod',
@@ -2890,7 +2869,7 @@
             },
 
             usercommandsCommand: {
-                command: 'usercommands22222',
+                command: 'usercommands',
                 rank: 'manager',
                 type: 'exact',
                 functionality: function (chat, cmd) {
