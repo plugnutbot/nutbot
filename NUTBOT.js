@@ -744,6 +744,7 @@
                     index = i;
                 }
             }
+            }
             var greet = true;
             var welcomeback = null;
             if (known) {
@@ -776,6 +777,7 @@
                     }, 1 * 1000, user);
             }
         },
+        
         eventUserleave: function (user) {
             for (var i = 0; i < basicBot.room.users.length; i++) {
                 if (basicBot.room.users[i].id === user.id) {
