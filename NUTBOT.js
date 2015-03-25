@@ -2157,7 +2157,7 @@
             },
 
             lockskipCommand: {
-                command: 'skip',
+                command: 'lockskip',
                 rank: 'bouncer',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
@@ -2226,7 +2226,7 @@
             },
 
             lockskipposCommand: {
-                command: 'skippos',
+                command: 'lockskippos',
                 rank: 'manager',
                 type: 'startsWith',
                 functionality: function (chat, cmd) {
