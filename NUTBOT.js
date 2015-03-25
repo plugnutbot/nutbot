@@ -738,6 +738,7 @@
             var known = false;
             var index = null;
             for (var i = 0; i < basicBot.room.users.length; i++) {
+                if (perm < 2) {
                 if (basicBot.room.users[i].id === user.id) {
                     known = true;
                     index = i;
